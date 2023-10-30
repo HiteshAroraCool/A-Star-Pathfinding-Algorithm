@@ -6,7 +6,7 @@ var openSet = [];
 var closedSet = [];
 var start;
 var end;
-var width, height;
+var w, h;
 
 function Stop() {
     this.x = i;
@@ -16,6 +16,9 @@ function Stop() {
     this.h = 0;
 
     this.show = function() {
+        fill(255);
+        stroke(0);
+        rect(this.x*w, this.y*h, w-1, h-1);
 
     }
 }
@@ -23,6 +26,9 @@ function Stop() {
 function setup() {
     createCanvas(400, 400);
     console.log('A*');
+
+    w = width / cols;
+    h = height / rows;
 
     // Making a 2D Array
     for(var i = 0; i < cols; i++) {
