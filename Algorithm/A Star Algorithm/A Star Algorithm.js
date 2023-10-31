@@ -1,4 +1,7 @@
 // 20:20
+// TO Run This Project, in Terminal write:
+// cd "/workspaces/A-Star-Pathfinding-Algorithm/Algorithm/A Star Algorithm"
+// npx http-server
 var cols = 5;
 var rows = 5;
 var grid = new Array(cols);
@@ -25,7 +28,7 @@ function Stop() {
 }
 
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(800, 800);
     console.log('A*');
 
     w = width / cols;
