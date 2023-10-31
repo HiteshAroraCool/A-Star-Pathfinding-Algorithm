@@ -2,8 +2,8 @@
 // TO Run This Project, in Terminal write:
 // cd "/workspaces/A-Star-Pathfinding-Algorithm/Algorithm/A Star Algorithm"
 // npx http-server
-var cols = 5;
-var rows = 5;
+var cols = 50;
+var rows = 50;
 var grid = new Array(cols);
 
 var openSet = [];
@@ -20,8 +20,8 @@ function Stop() {
     this.h = 0;
 
     this.show = function() {
-        fill(255);
-        stroke(0);
+        fill(col);
+        noStroke();
         rect(this.x*w, this.y*h, w-1, h-1);
 
     }
@@ -63,9 +63,17 @@ function draw() {
 
     background(0); 
 
-    for (var i =0; i<cols; i++) {
+    for (var i=0; i<cols; i++) {
         for (var j = 0; j<rows; j++) {
-            grid[i][j].show();
+            grid[i][j].show(color(255));
         }
+    }
+
+    for (var i=0; i< closedSet.length; i++) {
+        closedSet[i].show(color(255,0,0));
+    }
+
+    for (var i=0; i<openSet.length; i++) {
+        openSet[i].show(color(0,255,0));
     }
 }
